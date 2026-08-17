@@ -29,6 +29,12 @@ export default function Index() {
     { day: 'Sunday', time: '8:00 AM - 6:00 PM' },
   ];
 
+  const testimonials = [
+    { name: 'Sarah Johnson', text: 'Best coffee in town! The atmosphere is cozy and the staff is incredibly friendly.', rating: 5 },
+    { name: 'Michael Chen', text: 'I come here every morning before work. Their espresso is perfection!', rating: 5 },
+    { name: 'Emma Rodriguez', text: 'Love this place! Great coffee, amazing pastries, and perfect for working remotely.', rating: 5 },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-800">
       {/* Header */}
@@ -131,6 +137,26 @@ export default function Index() {
               <h3 className="font-bold text-slate-900 dark:text-white mb-2">Email Us</h3>
               <p className="text-gray-600 dark:text-gray-300">hello@brewhaven.com</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="bg-slate-100 dark:bg-slate-800 py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-slate-900 dark:text-yellow-400 mb-12 text-center">What Our Customers Say</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-white dark:bg-slate-700 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-gray-700 dark:text-gray-200 mb-4 italic">"{testimonial.text}"</p>
+                <p className="font-bold text-slate-900 dark:text-white">— {testimonial.name}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
