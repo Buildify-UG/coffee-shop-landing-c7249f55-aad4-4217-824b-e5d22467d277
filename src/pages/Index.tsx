@@ -1,8 +1,19 @@
-import { Coffee, Clock, MapPin, Phone, Mail, Star } from 'lucide-react';
+import { Coffee, Clock, MapPin, Phone, Mail, Star, Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 export default function Index() {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const html = document.documentElement;
+    if (isDark) {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
+  }, [isDark]);
   const menuItems = [
     { name: 'Espresso', price: '$3.50', description: 'Rich and bold' },
     { name: 'Cappuccino', price: '$4.50', description: 'Creamy perfection' },
@@ -21,13 +32,22 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
       {/* Header */}
-      <header className="bg-amber-900 text-white py-8 px-4">
+      <header className="bg-amber-900 dark:bg-slate-900 text-white py-8 px-4 transition-colors">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Coffee className="w-10 h-10" />
             <h1 className="text-4xl font-bold">Brew Haven</h1>
           </div>
-          <p className="text-amber-100">Crafted with passion</p>
+          <div className="flex items-center gap-4">
+            <p className="text-amber-100 dark:text-slate-300">Crafted with passion</p>
+            <button
+              onClick={() => setIsDark(!isDark)}
+              className="bg-amber-800 dark:bg-slate-700 hover:bg-amber-700 dark:hover:bg-slate-600 p-2 rounded-lg transition-colors"
+              aria-label="Toggle dark mode"
+            >
+              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
       </header>
 
