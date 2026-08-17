@@ -64,7 +64,7 @@ export default function Index() {
         backgroundColor: 'rgba(15, 23, 42, 0.5)'
       }}>
         <div className="max-w-6xl mx-auto text-center text-white">
-          <h2 className="text-5xl font-bold mb-4">Your Daily Escape</h2>
+          <h2 className="text-7xl font-bold mb-4">Your Daily Escape</h2>
           <p className="text-xl mb-8 text-yellow-200">Premium coffee, cozy atmosphere, and warm smiles</p>
           <Button className="bg-yellow-500 hover:bg-yellow-600 text-slate-900 font-bold px-8 py-3 text-lg">
             Order Now
