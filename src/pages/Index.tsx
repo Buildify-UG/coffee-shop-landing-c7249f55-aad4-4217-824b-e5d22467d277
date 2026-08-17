@@ -40,7 +40,7 @@ export default function Index() {
         <div className="max-w-6xl mx-auto text-center text-white">
           <h2 className="text-5xl font-bold mb-4">Your Daily Escape</h2>
           <p className="text-xl mb-8 text-amber-100">Premium coffee, cozy atmosphere, and warm smiles</p>
-          <Button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 text-lg">
+          <Button className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 text-lg">
             Order Now
           </Button>
         </div>
