@@ -1,5 +1,6 @@
 import { Coffee, Clock, MapPin, Phone, Mail, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
 
 export default function Index() {
   const menuItems = [
@@ -115,8 +116,32 @@ export default function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-amber-900 text-white py-8 px-4 text-center">
-        <p>&copy; 2024 Brew Haven. All rights reserved. ☕</p>
+      <footer className="bg-amber-900 text-white py-12 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-8">
+            <div className="text-center md:text-left mb-6 md:mb-0">
+              <h3 className="text-2xl font-bold mb-2">Brew Haven</h3>
+              <p className="text-amber-100">Crafted with passion, served with love</p>
+            </div>
+            <div className="flex gap-6">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="bg-amber-800 hover:bg-amber-700 p-3 rounded-full transition-colors">
+                <Facebook className="w-6 h-6" />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="bg-amber-800 hover:bg-amber-700 p-3 rounded-full transition-colors">
+                <Instagram className="w-6 h-6" />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="bg-amber-800 hover:bg-amber-700 p-3 rounded-full transition-colors">
+                <Twitter className="w-6 h-6" />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="bg-amber-800 hover:bg-amber-700 p-3 rounded-full transition-colors">
+                <Linkedin className="w-6 h-6" />
+              </a>
+            </div>
+          </div>
+          <div className="border-t border-amber-800 pt-6 text-center">
+            <p className="text-amber-100">&copy; 2024 Brew Haven. All rights reserved. ☕</p>
+          </div>
+        </div>
       </footer>
     </div>
   );
